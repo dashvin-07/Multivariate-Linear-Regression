@@ -1,3 +1,5 @@
+# NAME : DASHVIN S
+# REG NO : 212224100008
 # Implementation of Multivariate Linear Regression
 ## Aim
 To write a python program to implement multivariate linear regression and predict the output.
@@ -6,34 +8,54 @@ To write a python program to implement multivariate linear regression and predic
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
 ### Step1
-<br>
+Import Libraries
+Import the required libraries: pandas for data handling and linear_model from sklearn for linear regression.
 
 ### Step2
-<br>
+Load Dataset
+Read the CSV file (carsemission.csv) using pandas and store it in a DataFrame.
 
 ### Step3
-<br>
+Prepare Data
+Select the features Weight and Volume as input (X), and CO2 as the target/output (y).
 
 ### Step4
-<br>
+Train the Model
+Create a Linear Regression model and train (fit) it using the input (X) and output (y) data.
 
 ### Step5
-<br>
+Display Model Parameters
+Print the learned coefficients (slopes for Weight and Volume) and the intercept (bias term).
+
+### Step6
+Make Predictions
+Predict the CO2 emission for a new car with given Weight and Volume, and print the result.
+
 
 ## Program:
-```
+```PYTHON
 
-
-
-
-
+import pandas as pd
+from sklearn import linear_model
+df = pd.read_csv("/content/carsemission.csv")
+X = df[['Weight', 'Volume']]
+y = df['CO2']
+regr = linear_model.LinearRegression()
+regr.fit(X, y)
+print('Coefficients:', regr.coef_)
+print('Intercept:', regr.intercept_)
+input_data = pd.DataFrame({'Weight': [3300], 'Volume': [1300]})
+predictedCO2 = regr.predict(input_data)
+print('Predicted CO2 for the corresponding weight and volume:', predictedCO2)
 
 ```
 ## Output:
 
 ### Insert your output
 
-<br>
+![3](https://github.com/user-attachments/assets/42efcf78-3e79-465a-a462-a1c883d51219)
+
+
 
 ## Result
 Thus the multivariate linear regression is implemented and predicted the output using python program.
